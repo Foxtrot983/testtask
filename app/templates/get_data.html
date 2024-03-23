@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Get some data</h1>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <td><h6>Title</h6></td>
+                    <td><h6>Text</h6></td>
+                </tr>
+            </thead>
+            <tbody>
+            {% for obj in data %}
+            <tr>
+                <td><p>{{ obj.title }}</p></td>
+                <td><p>{{ obj.text }}</p></td>
+                <td><a href="{{ url_for('update_articles', article=obj.id)}}">Изменить</a></td>
+                <td><a href="{{ url_for('delete_article', article=obj.id)}}">Удалить</a></td>
+            </td>
+            {% endfor %}
+            </tbody>
+        </table>
+        
+    </div>
+    
+{% endblock %}

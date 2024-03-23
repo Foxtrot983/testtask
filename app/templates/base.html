@@ -16,6 +16,8 @@
             <a href="{{ url_for('login') }}">Login</a>
             <a href="{{ url_for('register')}}">Register</a>
             {% else %}
+            <a href="{{ url_for('send_article') }}">Add Data</a>
+            <a href="{{ url_for('get_articles') }}">Get Data</a>
             <a href="{{ url_for('logout') }}">Logout</a>
             {% endif %}
         </div>
